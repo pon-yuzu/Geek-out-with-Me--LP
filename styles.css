@@ -4,20 +4,20 @@
    =========================================== */
 
 :root {
-  /* カラーパレット刷新: 落ち着いた大人っぽい配色 */
-  --primary: #E85A50;        /* 深みのあるコーラル */
-  --primary-muted: #C74A42;  /* 暗めのプライマリ */
-  --secondary: #3AAFA9;      /* 落ち着いたティール */
-  --secondary-muted: #2B7A78;
-  --accent: #F5CB5C;         /* 控えめなゴールド */
-  --dark: #1A1A2E;           /* より深いダーク */
-  --dark-surface: #16162A;   /* セクション背景用 */
-  --dark-elevated: #232340;  /* カード背景用 */
-  --light: #F7F7F7;
-  --text-muted: rgba(247, 247, 247, 0.65);
-  --gradient-1: linear-gradient(135deg, #E85A50 0%, #D4726A 100%);
-  --gradient-2: linear-gradient(135deg, #3AAFA9 0%, #2B7A78 100%);
-  --gradient-cta: linear-gradient(135deg, #3AAFA9 0%, #46C9A2 50%, #3AAFA9 100%);
+  /* パターンA: Citrus Pop */
+  --primary: #FF7A1A;
+  --primary-muted: #D85F12;
+  --secondary: #2EC4B6;
+  --secondary-muted: #219B8F;
+  --accent: #FFD166;
+  --dark: #0F1526;
+  --dark-surface: #151C33;
+  --dark-elevated: #1E2747;
+  --light: #F8F5F2;
+  --text-muted: rgba(248, 245, 242, 0.7);
+  --gradient-1: linear-gradient(135deg, #FF7A1A 0%, #FF4D4D 100%);
+  --gradient-2: linear-gradient(135deg, #2EC4B6 0%, #7BE495 100%);
+  --gradient-cta: linear-gradient(135deg, #FF7A1A 0%, #FFB347 50%, #2EC4B6 100%);
 }
 
 * {
@@ -48,8 +48,8 @@ body {
   padding: 2rem;
   position: relative;
   background:
-    radial-gradient(ellipse at 20% 80%, rgba(232, 90, 80, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(58, 175, 169, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(255, 122, 26, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(46, 196, 182, 0.18) 0%, transparent 55%),
     var(--dark);
 }
 
@@ -84,8 +84,8 @@ body {
   background-clip: text;
   margin-bottom: 1.5rem;
   animation: fadeInUp 0.8s ease-out 0.2s both;
-  text-shadow: 0 4px 30px rgba(232, 90, 80, 0.3);
-  filter: drop-shadow(0 2px 10px rgba(232, 90, 80, 0.2));
+  text-shadow: 0 4px 30px rgba(255, 122, 26, 0.3);
+  filter: drop-shadow(0 2px 10px rgba(255, 122, 26, 0.2));
 }
 
 .hero-subtitle {
@@ -114,8 +114,8 @@ body {
 }
 
 .hero-badge {
-  background: rgba(58, 175, 169, 0.15);
-  border: 1px solid rgba(58, 175, 169, 0.3);
+  background: rgba(46, 196, 182, 0.15);
+  border: 1px solid rgba(46, 196, 182, 0.3);
   color: var(--secondary);
   padding: 0.5rem 1.2rem;
   border-radius: 30px;
@@ -218,7 +218,7 @@ section {
 .problem-list li {
   padding: 1.5rem;
   margin-bottom: 1rem;
-  background: rgba(232, 90, 80, 0.08);
+  background: rgba(255, 122, 26, 0.08);
   border-left: 4px solid var(--primary-muted);
   border-radius: 0 12px 12px 0;
   font-size: 1.05rem;
@@ -227,7 +227,7 @@ section {
 
 .problem-list li:hover {
   transform: translateX(10px);
-  background: rgba(232, 90, 80, 0.12);
+  background: rgba(255, 122, 26, 0.12);
 }
 
 /* ===========================================
@@ -336,8 +336,8 @@ section {
 
 /* Featured カード強調 */
 .package-card.featured {
-  border: 1px solid rgba(58, 175, 169, 0.3);
-  box-shadow: 0 0 30px rgba(58, 175, 169, 0.1);
+  border: 1px solid rgba(46, 196, 182, 0.3);
+  box-shadow: 0 0 30px rgba(46, 196, 182, 0.1);
 }
 
 .package-card.featured::before {
@@ -452,18 +452,18 @@ section {
 .target-list li {
   padding: 1.2rem 1.5rem;
   margin-bottom: 1rem;
-  background: rgba(58, 175, 169, 0.08);
+  background: rgba(46, 196, 182, 0.08);
   border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 1rem;
   transition: transform 0.3s ease;
-  border: 1px solid rgba(58, 175, 169, 0.1);
+  border: 1px solid rgba(46, 196, 182, 0.1);
 }
 
 .target-list li:hover {
   transform: scale(1.02);
-  background: rgba(58, 175, 169, 0.12);
+  background: rgba(46, 196, 182, 0.12);
 }
 
 .target-list li::before {
@@ -510,8 +510,20 @@ section {
 }
 
 .benefit-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(255, 122, 26, 0.12);
+  letter-spacing: 0.06em;
 }
 
 .benefit-title {
@@ -537,7 +549,7 @@ section {
   padding: 10rem 2rem;
   max-width: 100%;
   background:
-    radial-gradient(ellipse at 50% 50%, rgba(58, 175, 169, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 50%, rgba(46, 196, 182, 0.2) 0%, transparent 60%),
     var(--dark);
 }
 
@@ -578,13 +590,13 @@ section {
   font-weight: 700;
   text-decoration: none;
   transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(58, 175, 169, 0.3);
+  box-shadow: 0 4px 15px rgba(46, 196, 182, 0.3);
 }
 
 .btn-cta:hover {
   transform: scale(1.05);
   background-position: 100% 0;
-  box-shadow: 0 8px 25px rgba(58, 175, 169, 0.5);
+  box-shadow: 0 8px 25px rgba(46, 196, 182, 0.5);
 }
 
 .btn-cta--secondary {
@@ -611,13 +623,13 @@ section {
   font-weight: 700;
   text-decoration: none;
   transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(58, 175, 169, 0.3);
+  box-shadow: 0 4px 15px rgba(46, 196, 182, 0.3);
 }
 
 .cta-button:hover {
   transform: scale(1.05);
   background-position: 100% 0;
-  box-shadow: 0 8px 25px rgba(58, 175, 169, 0.5);
+  box-shadow: 0 8px 25px rgba(46, 196, 182, 0.5);
 }
 
 /* ===========================================

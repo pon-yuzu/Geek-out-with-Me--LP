@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geek out with Me! - Design Patterns</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0D0D0D;
+      color: #FFFFFF;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .subtitle {
+      color: #888;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .patterns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .pattern-card {
+      background: #1A1A1A;
+      border-radius: 12px;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #333;
+    }
+
+    .pattern-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .pattern-card.a {
+      border-top: 4px solid #FF6B35;
+    }
+
+    .pattern-card.b {
+      border-top: 4px solid #00B4D8;
+    }
+
+    .pattern-card.c {
+      border-top: 4px solid #E94560;
+    }
+
+    .pattern-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+
+    .pattern-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .pattern-card.a .pattern-name {
+      color: #FF6B35;
+    }
+
+    .pattern-card.b .pattern-name {
+      color: #00B4D8;
+    }
+
+    .pattern-card.c .pattern-name {
+      color: #E94560;
+    }
+
+    .pattern-desc {
+      font-size: 0.85rem;
+      color: #AAA;
+      line-height: 1.6;
+    }
+
+    .pattern-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .keyword {
+      font-size: 0.65rem;
+      padding: 0.25rem 0.6rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .patterns {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Geek out with Me!</h1>
+  <p class="subtitle">Design Pattern Selector</p>
+
+  <div class="patterns">
+    <a href="pattern-a.html" class="pattern-card a">
+      <p class="pattern-label">Pattern A</p>
+      <h2 class="pattern-name">Layered & Dimensional</h2>
+      <p class="pattern-desc">
+        立体感とレイヤーを強調したデザイン。大きな丸みのある図形、深いシャドウ、奥行きのある空間演出。
+      </p>
+      <div class="pattern-keywords">
+        <span class="keyword">Deep Shadows</span>
+        <span class="keyword">Rounded Shapes</span>
+        <span class="keyword">Layered</span>
+      </div>
+    </a>
+
+    <a href="pattern-b.html" class="pattern-card b">
+      <p class="pattern-label">Pattern B</p>
+      <h2 class="pattern-name">Linear & Sharp</h2>
+      <p class="pattern-desc">
+        直線的でシャープなデザイン。グリッド感のあるレイアウト、細いライン、高コントラスト。
+      </p>
+      <div class="pattern-keywords">
+        <span class="keyword">Grid Layout</span>
+        <span class="keyword">Sharp Edges</span>
+        <span class="keyword">High Contrast</span>
+      </div>
+    </a>
+
+    <a href="pattern-c.html" class="pattern-card c">
+      <p class="pattern-label">Pattern C</p>
+      <h2 class="pattern-name">Dynamic & Rhythmic</h2>
+      <p class="pattern-desc">
+        ダイナミックでリズミカルなデザイン。ウェーブ、斜めレイアウト、大胆な色面。
+      </p>
+      <div class="pattern-keywords">
+        <span class="keyword">Wave Patterns</span>
+        <span class="keyword">Diagonal</span>
+        <span class="keyword">Bold Colors</span>
+      </div>
+    </a>
+  </div>
+</body>
+</html>
