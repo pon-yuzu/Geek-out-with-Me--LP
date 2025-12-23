@@ -20,7 +20,7 @@
   --gradient-1: linear-gradient(135deg, #FF6B35 0%, #FF8F5C 50%, #FFAB76 100%);
   --gradient-2: linear-gradient(135deg, #00D9C0 0%, #5EEAD4 100%);
   --gradient-cta: linear-gradient(145deg, #FF6B35 0%, #FF8F5C 40%, #FFD23F 100%);
-  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.2);
   --shadow-glow-orange: 0 0 60px rgba(255, 107, 53, 0.3);
   --shadow-glow-teal: 0 0 60px rgba(0, 217, 192, 0.2);
 }
@@ -95,7 +95,8 @@ body {
 }
 
 .hero-title {
-  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
   font-size: clamp(2.5rem, 8vw, 5rem);
   background: var(--gradient-1);
   -webkit-background-clip: text;
@@ -300,6 +301,9 @@ section {
   padding-top: 5rem;
   padding-bottom: 7rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .solution::before {
@@ -316,28 +320,30 @@ section {
 }
 
 /* Solutionコンテンツ幅制御（HTMLにInnerラッパーがない場合） */
-.solution .section-label,
+.solution .section-label {
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+}
+
 .solution .section-title,
 .solution .solution-highlight,
 .solution .solution-text {
+  width: 100%;
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+  text-align: left;
   position: relative;
   z-index: 1;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .solution-highlight {
-  font-family: 'Dela Gothic One', cursive;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-  background: var(--gradient-2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--secondary);
+  text-shadow: 2px 2px 0 var(--dark), -1px -1px 0 rgba(0, 217, 192, 0.3);
   margin: 2rem 0;
+  letter-spacing: 0.02em;
 }
 
 .solution-text {
@@ -428,8 +434,8 @@ section {
 }
 
 .package-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), var(--shadow-glow-orange);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 30px rgba(255, 107, 53, 0.15);
 }
 
 .package-card::before {
@@ -551,6 +557,36 @@ section {
   box-shadow: 0 0 8px rgba(0, 217, 192, 0.5);
 }
 
+/* Package Plus Section */
+.package-plus {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed var(--primary);
+}
+
+.plus-label {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(255, 107, 53, 0.15);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.plus-features {
+  border-top: none !important;
+  padding-top: 0 !important;
+  margin-top: 0.5rem !important;
+}
+
+.plus-features li::before {
+  background: var(--primary) !important;
+  box-shadow: 0 0 8px rgba(255, 107, 53, 0.5) !important;
+}
+
 .packages-cta {
   text-align: center;
   margin-top: 3.5rem;
@@ -666,8 +702,8 @@ section {
 }
 
 .benefit-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 210, 63, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 210, 63, 0.08);
 }
 
 .benefit-icon {
@@ -735,16 +771,17 @@ section {
 }
 
 .cta-title {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
-  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 900;
   margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
-  line-height: 1.8;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
   /* 視認性最優先: 明るいゴールド + 暗色シャドウ */
   color: #FFE066;
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  text-shadow: 2px 2px 0 var(--dark), 0 6px 18px rgba(0, 0, 0, 0.55);
 }
 
 .cta-text {
@@ -757,7 +794,8 @@ section {
 
 .cta-limit {
   /* タグ風デザイン - ボタンに見えないように */
-  display: inline-block;
+  display: block;
+  width: fit-content;
   background: rgba(255, 107, 53, 0.15);
   color: var(--primary);
   padding: 0.3rem 0.9rem;
