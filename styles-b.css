@@ -747,6 +747,141 @@ section {
 }
 
 /* ============================================
+   PROFILE SECTION
+   ============================================ */
+.profile {
+  background: var(--white);
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.profile-inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.profile-content {
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: flex-start;
+}
+
+.profile-image {
+  flex-shrink: 0;
+  width: 280px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+  letter-spacing: 0.02em;
+}
+
+.profile-name-sub {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--medium-gray);
+  margin-left: 0.5rem;
+}
+
+.profile-career {
+  list-style: none;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--off-white);
+  border-left: 3px solid var(--primary);
+}
+
+.profile-career li {
+  padding: 0.4rem 0;
+  color: var(--medium-gray);
+  font-size: 0.9rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.profile-career li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.profile-message {
+  margin-bottom: 2rem;
+}
+
+.profile-message p {
+  color: var(--medium-gray);
+  font-size: 0.95rem;
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.profile-message p:first-child {
+  font-size: 1.05rem;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.profile-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile-link {
+  display: inline-block;
+  padding: 0.7rem 1.8rem;
+  background: transparent;
+  border: 1px solid var(--dark);
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+.profile-link:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 200px;
+  }
+
+  .profile-career {
+    text-align: left;
+  }
+
+  .profile-links {
+    justify-content: center;
+  }
+}
+
+/* ============================================
    CTA SECTION
    ============================================ */
 .cta {
