@@ -5,9 +5,7 @@
 // ここでリンク先を一括変更できます
 // ============================================
 const CTA_CONFIG = {
-  url: 'https://example.com/contact',  // ここにお問い合わせフォームのURLを設定
-  // url: 'mailto:example@email.com',  // メールリンクの場合
-  // url: 'https://line.me/...',       // LINEリンクの場合
+  url: 'https://lin.ee/GfasAMn',  // LINE友達追加リンク
 };
 
 // ============================================
