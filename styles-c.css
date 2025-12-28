@@ -816,49 +816,47 @@ section {
    PROFILE SECTION
    ============================================ */
 .profile {
-  background: var(--off-white);
+  background: var(--white);
   padding: var(--section-padding);
   position: relative;
   overflow: hidden;
 }
 
-.profile::before {
-  content: '';
-  position: absolute;
-  bottom: -50px;
-  right: -50px;
-  width: 200px;
-  height: 200px;
-  background: var(--secondary);
-  opacity: 0.2;
-  border-radius: 50%;
-}
-
 .profile-inner {
-  max-width: var(--content-max-width);
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
+.profile-card {
+  background: var(--off-white);
+  padding: 2.5rem;
+  margin-top: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
 .profile-content {
   display: flex;
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 2.5rem;
   align-items: flex-start;
 }
 
 .profile-image {
   flex-shrink: 0;
-  width: 280px;
+  width: 150px;
+  height: 150px;
 }
 
 .profile-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   object-fit: cover;
+  object-position: center;
+  border: 4px solid var(--primary);
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.2);
 }
 
 .profile-info {
@@ -867,34 +865,35 @@ section {
 
 .profile-name {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   color: var(--dark);
 }
 
 .profile-name-sub {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: var(--medium-gray);
-  margin-left: 0.5rem;
+  display: block;
+  margin-top: 0.3rem;
 }
 
 .profile-career {
   list-style: none;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 1.5rem;
   background: var(--white);
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .profile-career li {
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
   color: var(--medium-gray);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   position: relative;
-  padding-left: 1.8rem;
+  padding-left: 1.5rem;
 }
 
 .profile-career li::before {
@@ -902,23 +901,23 @@ section {
   position: absolute;
   left: 0;
   color: var(--primary);
-  font-size: 0.6rem;
-  top: 0.7rem;
+  font-size: 0.5rem;
+  top: 0.6rem;
 }
 
 .profile-message {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .profile-message p {
   color: var(--medium-gray);
-  font-size: 1rem;
-  line-height: 1.9;
-  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 0.8rem;
 }
 
 .profile-message p:first-child {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--primary);
   font-weight: 600;
 }
@@ -930,11 +929,11 @@ section {
 
 .profile-link {
   display: inline-block;
-  padding: 0.8rem 2rem;
+  padding: 0.7rem 1.8rem;
   background: var(--primary);
   color: var(--white);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -947,6 +946,10 @@ section {
 }
 
 @media (max-width: 768px) {
+  .profile-card {
+    padding: 1.5rem;
+  }
+
   .profile-content {
     flex-direction: column;
     align-items: center;
@@ -954,7 +957,13 @@ section {
   }
 
   .profile-image {
-    width: 200px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-image img {
+    width: 120px;
+    height: 120px;
   }
 
   .profile-career {
